@@ -19,10 +19,10 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn(
-          inter.className,
-          "h-screen w-screen bg-gradient-to-b from-blue-700 to-black",
-        )}
+        className={cn(inter.className, "h-screen w-screen bg-cover bg-center")}
+        style={{
+          backgroundImage: "url('/Background.jpg')",
+        }}
       >
         <Web3ContextProvider>{children}</Web3ContextProvider>
       </body>
