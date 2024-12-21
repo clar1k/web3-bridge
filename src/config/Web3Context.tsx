@@ -1,7 +1,7 @@
 "use client";
 import { createAppKit } from "@reown/appkit/react";
 import { WagmiProvider } from "wagmi";
-import { arbitrum, base, mainnet } from "@reown/appkit/networks";
+import { arbitrumSepolia, baseSepolia, sepolia } from "@reown/appkit/networks";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { WagmiAdapter } from "@reown/appkit-adapter-wagmi";
 
@@ -17,19 +17,23 @@ const metadata = {
 };
 
 const wagmiAdapter = new WagmiAdapter({
-  networks: [mainnet, arbitrum, base],
+  networks: [sepolia, arbitrumSepolia, baseSepolia],
   projectId,
   ssr: true,
 });
 
 createAppKit({
   adapters: [wagmiAdapter],
-  networks: [mainnet, arbitrum, base],
+  networks: [sepolia, arbitrumSepolia, baseSepolia],
+  defaultNetwork: baseSepolia,
   projectId,
   metadata,
   features: {
-    analytics: true,
+    email: false,
+    socials: [],
+    emailShowWallets: false,
   },
+  themeMode: "dark",
 });
 
 export function Web3ContextProvider({

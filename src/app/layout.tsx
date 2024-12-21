@@ -4,10 +4,11 @@ import { Inter } from "next/font/google";
 import { Web3ContextProvider } from "~/config/Web3Context";
 import { cn } from "~/lib/utils";
 import "~/styles/globals.css";
+import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Chain Bridge",
-  description: "Bridge tokens between chains",
+  title: "Bloom Bridge",
+  description: "",
 };
 const inter = Inter({ subsets: ["latin"] });
 
